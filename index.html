@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<a onclick="window.open('popup.html','popup','width=600,height=600'); return false;" target="popup">Open Popup To Prove Post Message</a>
+<div>Message From Popup: <span id="message"></span></div>
+<script>
+var qs = document.querySelector.bind(document);
+window.addEventListener('message', function(message){
+  qs('#message').innerHTML = message.data;
+});
+</script>
+  
+</body>
+</html>
